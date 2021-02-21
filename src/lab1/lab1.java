@@ -34,8 +34,7 @@ public class lab1
 
         ll.remove(Integer.valueOf(10));
         ll.displayAll();
-
-        ll.reverse();
+        
         ll.displayAll();
 
         SortedLinkedList l1 = new SortedLinkedList();
@@ -51,10 +50,8 @@ public class lab1
         l1.add(0);
         l1.add(3);
 
-        l1.reverse();
-        System.out.println(ll.equal(l1));
+
         ll.displayAll();
-        l1.displayAll();
 
 
         ll.displayAll();
