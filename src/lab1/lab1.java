@@ -5,7 +5,7 @@ public class lab1
 {
     public static void main(String[] args)
     {
-        /*SortedLinkedList ll = new SortedLinkedList();
+        SortedLinkedList ll = new SortedLinkedList();
         ll.add(1);
         ll.add(2);
         ll.add(3);
@@ -75,7 +75,6 @@ public class lab1
         ll.remove(Integer.valueOf(3));
         ll.displayAll();
 
-        ll.add(null);*/
 
 
 

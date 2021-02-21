@@ -65,12 +65,9 @@ public class SortedLinkedList {
         if (head == null) {
             head = elem;
             tail = elem;
-        }
-        else
-        {
+        } else {
 
-            if (this.compareTo(elem, head) < 0)
-            {
+            if (this.compareTo(elem, head) < 0) {
                 elem.next = head;
                 head = elem;
                 return;
@@ -271,8 +268,7 @@ public class SortedLinkedList {
         return i;
     }
 
-    private int compareTo(Value v1, Value v2)
-    {
+    private int compareTo(Value v1, Value v2) {
         String str1 = String.valueOf(v1.value);
         String str2 = String.valueOf(v2.value);
 
@@ -295,11 +291,11 @@ public class SortedLinkedList {
         Value v = this.head;
         int i = 0;
 
-        while(v.next != null)
+        while (v.next != null)
         {
-            if(v.next.value.equals(v.value))
+            if (v.next.value.equals(v.value))
             {
-                this.remove(i+1);
+                this.remove(i + 1);
                 continue;
             }
 
@@ -307,87 +303,7 @@ public class SortedLinkedList {
             i++;
         }
     }
-
-
-    public void reverse() {
-        Value v = head, temp = v.next;
-
-        if (temp == null) {
-            Value a = head;
-            head = tail;
-            tail = a;
-            return;
-        }
-
-        while (temp.next != null) {
-            v = v.next;
-            temp = v.next;
-        }
-
-        temp.next = v;
-        v.next = null;
-        this.reverse();
-    }
-
-/*    public SortedLinkedList reverseCopy()
-    {
-        Value v = this.head;
-
-        SortedLinkedList l1 = new SortedLinkedList();
-
-        while (v != null)
-        {
-            l1.addHead(v.value);
-            v = v.next;
-        }
-        return l1;
-    }*/
-
-    public boolean equal(SortedLinkedList l1) {
-        Value v = this.head;
-        Value v1 = l1.head;
-
-        while (v != null || v1 != null) {
-            if (v.value != v1.value) {
-                return false;
-            }
-
-            v = v.next;
-            v1 = v1.next;
-        }
-
-        if (v == null && v1 == null) {
-            return true;
-        }
-
-        return false;
-    }
 }
-/*
-    public void insertDuplicate()
-    {
-        Value v = this.head;
 
-        while (v != null)
-        {
-            if(v.value != v.next.value)
-            {
-                Value elem = new Value(v.value);
 
-                elem.next = v.next;
-                v.next = elem;
-                continue;
-            }
-            else
-            {
-                while (v.value == v.next.value)
-                {
-                    v = v.next;
-                }
-            }
 
-            v = v.next;
-        }
-    }
-}
-*/
