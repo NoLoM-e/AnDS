@@ -1,10 +1,13 @@
 package ands;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BinarySearchTree<T>
 {
-    private Node root;
+    protected Node root;
 
-    private static class Node<T>
+    protected static class Node<T>
     {
         T value;
         Node left;
@@ -12,6 +15,15 @@ public class BinarySearchTree<T>
         public Node(T t)
         {
             this.value = t;
+        }
+    }
+
+    public BinarySearchTree() { }
+
+    public BinarySearchTree(List<T> list)
+    {
+        for (T t:list) {
+            this.add(t);
         }
     }
 
@@ -74,5 +86,32 @@ public class BinarySearchTree<T>
         {
             printInorder(n.right);
         }
+    }
+
+    public List<T> inorder()
+    {
+        if(this.root == null)
+        {
+            return null;
+        }
+
+        return inorder(new ArrayList<T>(), this.root);
+    }
+
+    private List<T> inorder(List<T> list, Node n)
+    {
+        if(n.left != null)
+        {
+            inorder(list, n.left);
+        }
+
+        list.add((T) n.value);
+
+        if(n.right != null)
+        {
+            inorder(list, n.right);
+        }
+
+        return list;
     }
 }
