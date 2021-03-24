@@ -54,8 +54,13 @@ public class Main
         bbst.add(18);
 
         //BalancedBinarySearchTree<Integer> bbst = new BalancedBinarySearchTree(l);
-        bbst.printInorder();
+
 
         System.out.println("bbst.inorder() = " + bbst.inorder());
+        bbst.printInorder();
+        System.out.println("bbst.preorder() = " + bbst.preorder());
+        bbst.printPreorder();
+        System.out.println("bbst.postorder() = " + bbst.postorder());
+        bbst.printPostorder();
     }
 }
