@@ -53,7 +53,7 @@ public class Main
         bbst.add(19);
         bbst.add(18);
 
-        //BalancedBinarySearchTree<Integer> bbst = new BalancedBinarySearchTree(l);
+        //BalancedBinarySearchTree<Integer> bbst1 = new BalancedBinarySearchTree(l);
 
 
         System.out.println("bbst.inorder() = " + bbst.inorder());
@@ -62,5 +62,22 @@ public class Main
         bbst.printPreorder();
         System.out.println("bbst.postorder() = " + bbst.postorder());
         bbst.printPostorder();
+
+        System.out.println("bbst.getHeight() = " + bbst.getHeight());
+
+        System.out.println("bbst.contains(11) = " + bbst.contains(11));
+        System.out.println("bbst.contains(20) = " + bbst.contains(20));
+
+        System.out.println("bbst.fatherNode(11) = " + bbst.fatherNode(11));
+        System.out.println("bbst.commonAncestor(3, 11) = " + bbst.commonAncestor(3, 11));
+        System.out.println("bbst.copy().inorder() = " + bbst.copy().inorder());
+        System.out.println("bbst.copy().inorder() = " + bbst.copy().preorder());
+        System.out.println("bbst.equals(bbst.copy()) = " + bbst.equals(bbst.copy()));
+        System.out.println("bbst.symmetricalTree().inorder() = " + bbst.symmetricalTree().inorder());
+        System.out.println("bbst.isBalanced() = " + bbst.isBalanced());
+        bbst.delete(17);
+        System.out.println("bbst.inorder() = " + bbst.inorder());
+        System.out.println("bbst.preorder() = " + bbst.preorder());
+        System.out.println("bbst.postorder() = " + bbst.postorder());
     }
 }

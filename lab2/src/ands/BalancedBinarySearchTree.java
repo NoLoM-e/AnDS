@@ -11,14 +11,23 @@ public class BalancedBinarySearchTree<T> extends BinarySearchTree{
 
     public BalancedBinarySearchTree(List<T> list) {
         for(T t : list) {
-            super.add(t);
+            if(!this.contains(t)) {
+                super.add(t);
+            }
         }
         this.sort();
     }
 
 
     public void add(Object t){
-        super.add(t);
+        if(!this.contains(t)) {
+            super.add(t);
+            this.sort();
+        }
+    }
+
+    public void delete(Object t){
+        super.delete((T) t);
         this.sort();
     }
 
@@ -45,4 +54,17 @@ public class BalancedBinarySearchTree<T> extends BinarySearchTree{
 
         return n;
     }
+
+    public BalancedBinarySearchTree copy(){
+        return new BalancedBinarySearchTree(this.inorder());
+    }
+    public boolean isBalanced(){
+        return (Math.abs(this.getHeight(this.root.left) - this.getHeight(this.root.right)) <= 1);
+    }
+    public BalancedBinarySearchTree insert(BalancedBinarySearchTree bbst){
+        List<T> l = this.inorder();
+        l.addAll(bbst.inorder());
+        return new BalancedBinarySearchTree(l);
+    }
+
 }
